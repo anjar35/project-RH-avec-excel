@@ -21,34 +21,28 @@ Le fichier contient une liste fictive d’employés avec les colonnes suivantes 
 1. **Âge de l’employé** (en années entières)  
    ```excel
    =DATEDIF(DateNaissance, AUJOURDHUI(), "y")
+2.Ancienneté (en années et mois)
 =DATEDIF(DateEmbauche, AUJOURDHUI(), "y") & " an(s), " & DATEDIF(DateEmbauche, AUJOURDHUI(), "ym") & " mois"
-
-
-Date de fin d’année en cours (31/12/AAAA)
+=DATEDIF(DateEmbauche, AUJOURDHUI(), "y") & " an(s), " & DATEDIF(DateEmbauche, AUJOURDHUI(), "ym") & " mois"
+3.Date de fin d’année en cours (31/12/AAAA)
 
 =DATE(ANNEE(AUJOURDHUI()),12,31)
+4.Première date du mois prochain
 
+=DATE(YEAR(TODAY()),MONTH(TODAY())+1,1)
 
-Première date du mois prochain
-
-=FIN.MOIS(AUJOURDHUI(),0)+1
-
-
-Titre mensuel (Mois + Année) à partir de la date d’embauche
+5.Titre mensuel (Mois + Année) à partir de la date d’embauche
 
 =TEXTE(DateEmbauche;"mmmm aaaa")
 
-
-Nombre de jours depuis la dernière absence
+6.Nombre de jours depuis la dernière absence
 
 =AUJOURDHUI() - DerniereAbsence
 
-
-Numéro de semaine de la date d’embauche
+7.Numéro de semaine de la date d’embauche
 
 =NO.SEMAINE(DateEmbauche;2)
 
-
-Nom de sauvegarde automatique (BackupName)
+8.Nom de sauvegarde automatique (BackupName)
 
 ="Backup_" & TEXTE(AUJOURDHUI();"aaaa-mm-jj")
